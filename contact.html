@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Sabor & Alma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --primary: #DC2626; --secondary: #F59E0B; --dark: #1C1917; --light: #FFF7ED; }
+    .glass { backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.9); }
+    .nav-link { position: relative; font-weight: 500; color: #4B5563; }
+    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s; }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .nav-link:hover, .nav-link.active { color: var(--primary); }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5); }
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    input, textarea { transition: all 0.3s; }
+    input:focus, textarea:focus { border-color: var(--secondary); ring: 2px solid var(--secondary); outline: none; box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2); }
+  </style>
+</head>
+<body class="font-['Inter'] antialiased bg-stone-50 text-stone-800">
+
+  <!-- NAVIGATION -->
+  <nav class="fixed w-full z-50 glass border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-24">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <i class="fas fa-pepper-hot text-3xl text-red-600 group-hover:rotate-12 transition-transform"></i>
+          <span class="text-2xl font-bold font-['Plus_Jakarta_Sans'] tracking-tight text-stone-900">Sabor<span class="text-amber-500">&</span>Alma</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">Our Story</a>
+          <a href="menu.html" class="nav-link">Menu</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+          <a href="reservations.html" class="btn-primary text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">Book a Table</a>
+        </div>
+        <button class="md:hidden text-stone-800"><i class="fas fa-bars text-2xl"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-40 pb-16 bg-stone-900 text-white text-center">
+    <div class="max-w-3xl mx-auto px-4 reveal">
+      <h1 class="text-4xl lg:text-6xl font-bold font-['Plus_Jakarta_Sans'] mb-6">Get in Touch</h1>
+      <p class="text-xl text-stone-300">Have a question or want to host an event? We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT CONTENT -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16">
+        
+        <!-- Contact Form -->
+        <div class="bg-white p-8 lg:p-12 rounded-2xl shadow-xl border border-stone-100 reveal">
+          <h2 class="text-2xl font-bold font-['Plus_Jakarta_Sans'] mb-8 text-stone-900">Send us a Message</h2>
+          <form onsubmit="event.preventDefault(); alert('Message sent!');">
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label class="block text-sm font-medium text-stone-700 mb-2">Name</label>
+                <input type="text" class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 bg-stone-50" placeholder="Your name" required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-stone-700 mb-2">Email</label>
+                <input type="email" class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 bg-stone-50" placeholder="email@example.com" required>
+              </div>
+            </div>
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-stone-700 mb-2">Subject</label>
+              <input type="text" class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 bg-stone-50" placeholder="General Inquiry">
+            </div>
+            <div class="mb-8">
+              <label class="block text-sm font-medium text-stone-700 mb-2">Message</label>
+              <textarea rows="5" class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-amber-500 bg-stone-50" placeholder="How can we help you?" required></textarea>
+            </div>
+            <button type="submit" class="w-full btn-primary text-white font-bold py-4 rounded-xl shadow-lg transition-transform active:scale-95">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-8 reveal" style="transition-delay: 100ms;">
+          
+          <!-- Info Cards -->
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+              <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xl mb-4"><i class="fas fa-phone"></i></div>
+              <h3 class="font-bold text-lg mb-2">Phone</h3>
+              <p class="text-stone-600">(555) 123-4567</p>
+              <p class="text-stone-400 text-sm mt-1">Mon-Sun from 10am</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+              <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-xl mb-4"><i class="fas fa-envelope"></i></div>
+              <h3 class="font-bold text-lg mb-2">Email</h3>
+              <p class="text-stone-600">hola@saboralma.com</p>
+              <p class="text-stone-400 text-sm mt-1">Online support 24/7</p>
+            </div>
+          </div>
+
+          <!-- Map Placeholder -->
+          <div class="bg-stone-200 h-64 rounded-2xl relative overflow-hidden group">
+            <div class="absolute inset-0 bg-stone-300 flex items-center justify-center">
+              <div class="text-center">
+                <i class="fas fa-map-marked-alt text-4xl text-stone-400 mb-2"></i>
+                <p class="text-stone-500 font-medium">123 Culinary Ave, Food District</p>
+              </div>
+            </div>
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+              <a href="#" class="text-white font-bold hover:underline">Get Directions <i class="fas fa-external-link-alt ml-1"></i></a>
+            </div>
+          </div>
+
+          <!-- Hours -->
+          <div class="bg-stone-900 text-white p-8 rounded-2xl">
+            <h3 class="text-xl font-bold font-['Plus_Jakarta_Sans'] mb-6 flex items-center gap-2"><i class="far fa-clock text-amber-500"></i> Opening Hours</h3>
+            <ul class="space-y-4">
+              <li class="flex justify-between border-b border-stone-800 pb-2">
+                <span class="text-stone-400">Monday - Thursday</span>
+                <span class="font-medium">5:00 PM - 10:00 PM</span>
+              </li>
+              <li class="flex justify-between border-b border-stone-800 pb-2">
+                <span class="text-stone-400">Friday - Saturday</span>
+                <span class="font-medium text-amber-500">5:00 PM - 11:00 PM</span>
+              </li>
+              <li class="flex justify-between">
+                <span class="text-stone-400">Sunday</span>
+                <span class="font-medium">4:00 PM - 9:00 PM</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-stone-100">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl font-bold font-['Plus_Jakarta_Sans']">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4 reveal">
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <h3 class="font-bold text-lg mb-2">Do you have vegan options?</h3>
+          <p class="text-stone-600">Yes! We have a dedicated vegan menu including mushroom tacos, cactus salads, and dairy-free mole.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <h3 class="font-bold text-lg mb-2">Is there parking available?</h3>
+          <p class="text-stone-600">We offer valet parking on weekends for $10. During the week, there is ample street parking and a public lot one block away.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <h3 class="font-bold text-lg mb-2">Do you take large groups?</h3>
+          <p class="text-stone-600">For parties larger than 8, please contact us directly via the form above or call us to arrange special seating.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (Same as Index) -->
+  <footer class="bg-stone-950 text-white pt-20 pb-10 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div>
+          <a href="index.html" class="text-2xl font-bold font-['Plus_Jakarta_Sans'] mb-6 block">
+            Sabor<span class="text-amber-500">&</span>Alma
+          </a>
+          <p class="text-stone-400">Authentic Mexican cuisine served with modern elegance and soul.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-6 text-amber-500">Explore</h4>
+          <ul class="space-y-3 text-stone-400">
+            <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-white transition">Story</a></li>
+            <li><a href="menu.html" class="hover:text-white transition">Menu</a></li>
+            <li><a href="reservations.html" class="hover:text-white transition">Reservations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-6 text-amber-500">Visit Us</h4>
+          <ul class="space-y-3 text-stone-400">
+            <li><i class="fas fa-map-marker-alt w-6"></i> 123 Culinary Ave, Food District</li>
+            <li><i class="fas fa-phone w-6"></i> (555) 123-4567</li>
+            <li><i class="fas fa-envelope w-6"></i> hola@saboralma.com</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-6 text-amber-500">Hours</h4>
+          <ul class="space-y-3 text-stone-400">
+            <li class="flex justify-between"><span>Mon-Thu:</span> <span>5pm - 10pm</span></li>
+            <li class="flex justify-between"><span>Fri-Sat:</span> <span>5pm - 11pm</span></li>
+            <li class="flex justify-between"><span>Sun:</span> <span>4pm - 9pm</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-stone-500 text-sm">&copy; 2024 Sabor & Alma. All rights reserved.</p>
+        <div class="flex gap-4 mt-4 md:mt-0">
+          <a href="#" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-red-600 transition"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-stone-600 transition"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
